@@ -35,5 +35,8 @@
     "@babel/plugin-syntax-top-level-await": "^7.14.5",
     "eslint-plugin-jsdoc": "^37.6.1",
     "eslint-plugin-markdown": "^2.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.6.0"
   }
 }
