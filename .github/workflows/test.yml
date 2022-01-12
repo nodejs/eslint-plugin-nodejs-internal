@@ -38,8 +38,5 @@ jobs:
       - name: Install npm dependencies
         run: npm ci
 
-      - name: Link package for testing
-        run: npm link . eslint-plugin-nodejs-internal
-
       - name: Run tests
         run: npm test
