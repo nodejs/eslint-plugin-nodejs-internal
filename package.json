@@ -1,0 +1,35 @@
+{
+  "name": "eslint-plugin-nodejs-internal",
+  "version": "1.0.0",
+  "description": "ESLint plugin and config for Node.js core",
+  "author": "NodeJS Linting Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nodejs/eslint-plugin-nodejs-internal.git"
+  },
+  "main": "index.js",
+  "keywords": [
+    "eslint",
+    "eslint-plugin",
+    "eslint-config",
+    "node.js",
+    "node",
+    "internal"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "peerDependencies": {
+    "eslint": "^7.0.0"
+  },
+  "dependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/eslint-parser": "^7.16.5",
+    "@babel/plugin-syntax-class-properties": "^7.12.13",
+    "@babel/plugin-syntax-import-assertions": "^7.16.7",
+    "@babel/plugin-syntax-top-level-await": "^7.14.5",
+    "eslint-plugin-markdown": "^2.2.1",
+    "eslint-plugin-node-core": "^1.0.0"
+  }
+}
