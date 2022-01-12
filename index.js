@@ -1,13 +1,14 @@
 'use strict';
 
-/* eslint-env node */
-
 module.exports = {
   configs: {
     recommended: {
       extends: ['plugin:jsdoc/recommended'],
       plugins: ['jsdoc', 'markdown'],
       parser: '@babel/eslint-parser',
+      env: {
+        node: true
+      },
       parserOptions: {
         babelOptions: {
           plugins: [
