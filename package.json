@@ -18,10 +18,14 @@
     "internal"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint --env node --ignore-pattern tmp/ --config test/core-config.json .",
+    "test": "eslint --config test/core-config.json --ignore-path tmp/.eslintignore --no-eslintrc tmp/"
+  },
+  "engines": {
+    "node": "12.x || 14.x || >= 16"
   },
   "peerDependencies": {
-    "eslint": "^7.0.0"
+    "eslint": ">=6"
   },
   "dependencies": {
     "@babel/core": "^7.16.7",
@@ -29,7 +33,7 @@
     "@babel/plugin-syntax-class-properties": "^7.12.13",
     "@babel/plugin-syntax-import-assertions": "^7.16.7",
     "@babel/plugin-syntax-top-level-await": "^7.14.5",
-    "eslint-plugin-markdown": "^2.2.1",
-    "eslint-plugin-node-core": "^1.0.0"
+    "eslint-plugin-jsdoc": "^37.6.1",
+    "eslint-plugin-markdown": "^2.2.1"
   }
 }

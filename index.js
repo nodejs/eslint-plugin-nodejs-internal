@@ -5,7 +5,8 @@
 module.exports = {
   configs: {
     recommended: {
-      plugins: ['markdown', 'node-core'],
+      extends: ['plugin:jsdoc/recommended'],
+      plugins: ['jsdoc', 'markdown'],
       parser: '@babel/eslint-parser',
       parserOptions: {
         babelOptions: {
@@ -88,10 +89,11 @@ module.exports = {
           'always',
           {
             line: {
-              // Ignore all lines that have less characters than 20 and all lines that
-              // start with something that looks like a variable name or code.
-              // eslint-disable-next-line max-len
+              // Ignore all lines that have less characters than 20 and all
+              // lines that start with something that looks like a variable
+              // name or code.
               ignorePattern:
+                // eslint-disable-next-line max-len
                 '.{0,20}$|[a-z]+ ?[0-9A-Z_.(/=:[#-]|std|http|ssh|ftp|(let|var|const) [a-z_A-Z0-9]+ =|[b-z] |[a-z]*[0-9].* ',
               ignoreInlineComments: true,
               ignoreConsecutiveComments: true,
@@ -119,13 +121,13 @@ module.exports = {
         'dot-location': ['error', 'property'],
         'dot-notation': 'error',
         'eol-last': 'error',
-        eqeqeq: ['error', 'smart'],
+        'eqeqeq': ['error', 'smart'],
         'for-direction': 'error',
         'func-call-spacing': 'error',
         'func-name-matching': 'error',
         'func-style': ['error', 'declaration', { allowArrowFunctions: true }],
         'getter-return': 'error',
-        indent: [
+        'indent': [
           'error',
           2,
           {
@@ -193,8 +195,8 @@ module.exports = {
         'no-proto': 'error',
         'no-redeclare': ['error', { builtinGlobals: false }],
         'no-restricted-modules': ['error', 'sys'],
-        /* eslint-disable max-len */
         'no-restricted-properties': [
+          /* eslint-disable max-len */
           'error',
           {
             object: 'assert',
@@ -246,7 +248,6 @@ module.exports = {
             message: 'Use Number.isNaN() instead of the global isNaN() function.',
           },
         ],
-        /* eslint-enable max-len */
         'no-return-await': 'error',
         'no-self-assign': 'error',
         'no-self-compare': 'error',
@@ -295,10 +296,10 @@ module.exports = {
           { blankLine: 'always', prev: 'function', next: 'function' },
         ],
         'prefer-const': ['error', { ignoreReadBeforeAssign: true }],
-        quotes: ['error', 'single', { avoidEscape: true }],
+        'quotes': ['error', 'single', { avoidEscape: true }],
         'quote-props': ['error', 'consistent'],
         'rest-spread-spacing': 'error',
-        semi: 'error',
+        'semi': 'error',
         'semi-spacing': 'error',
         'space-before-blocks': ['error', 'always'],
         'space-before-function-paren': [
@@ -320,16 +321,12 @@ module.exports = {
             exceptions: ['-'],
           },
         ],
-        strict: ['error', 'global'],
+        'strict': ['error', 'global'],
         'symbol-description': 'error',
         'template-curly-spacing': 'error',
         'unicode-bom': 'error',
         'use-isnan': 'error',
         'valid-typeof': ['error', { requireStringLiterals: true }],
-
-        // Custom rules from eslint-plugin-node-core
-        'node-core/no-unescaped-regexp-dot': 'error',
-        'node-core/no-duplicate-requires': 'error',
       },
       globals: {
         AbortController: 'readable',
@@ -356,6 +353,7 @@ module.exports = {
     },
   },
   rules: {
+    /* eslint-disable max-len */
     'alphabetize-error': require('./eslint-rules/alphabetize-errors'),
     'async-iife-no-unused-result': require('./eslint-rules/async-iife-no-unused-result'),
     'crypto-check': require('./eslint-rules/crypto-check'),
