@@ -19,7 +19,7 @@
   ],
   "scripts": {
     "lint": "eslint --env node --ignore-pattern tmp/ --config test/core-config.json .",
-    "test": "eslint --config test/core-config.json --ignore-path tmp/.eslintignore --no-eslintrc tmp/"
+    "test": "eslint --max-warnings=0 --report-unused-disable-directives --cache --config test/core-config.json --ignore-path tmp/.eslintignore --no-eslintrc tmp/.eslintrc.js tmp/benchmark tmp/doc tmp/lib tmp/test tmp/tools"
   },
   "engines": {
     "node": "12.x || 14.x || >= 16"
