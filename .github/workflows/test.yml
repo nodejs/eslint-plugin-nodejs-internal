@@ -1,0 +1,42 @@
+name: Tests
+
+on:
+  push:
+    branches-ignore:
+      - "dependabot/**"
+  pull_request:
+
+jobs:
+  test:
+    name: Node ${{ matrix.node }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        node:
+          - 14
+          - 16
+          - 18
+
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v3
+
+      - name: Clone nodejs/node repository
+        uses: actions/checkout@v3
+        with:
+          repository: nodejs/node
+          path: tmp
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+
+      - name: Install npm dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
