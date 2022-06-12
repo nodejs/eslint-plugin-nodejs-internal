@@ -22,7 +22,7 @@
     "test": "eslint --max-warnings=0 --report-unused-disable-directives --cache --config test/core-config.json --ignore-path tmp/.eslintignore --no-eslintrc tmp/.eslintrc.js tmp/benchmark tmp/doc tmp/lib tmp/test tmp/tools"
   },
   "engines": {
-    "node": "12.x || 14.x || >= 16"
+    "node": "14.x || 16.x || >=18.0.0" 
   },
   "peerDependencies": {
     "eslint": ">=6"
